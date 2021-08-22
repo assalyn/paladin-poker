@@ -1,0 +1,85 @@
+locale = "zh-cn" # zh-tw, en, jp, kr ...
+
+# 枚举表
+enumFile = "xlsx/enum.xlsx"
+
+# 多语言表
+localeFile = "xlsx/多语言表.xlsx"
+
+# 数据表头几行忽略(表头)
+ignoreLine = 4
+
+[tables]
+  [tables.global]
+  workbook = "xlsx/全局配置表.xlsx"
+  horizontal = true
+
+  [tables.shop]
+  sheet = ["充值"]
+  workbook = "xlsx/商城表.xlsx"
+  horizontal = false
+  enums = [
+    {field = "pack", table = "pack"},
+  ]
+
+  [tables.skin]
+  sheet = ["皮肤"]
+  workbook = "xlsx/商城表.xlsx"
+  horizontal = false
+  enums = [
+    {field = "bonus_type", table = "enum", sheet = "加成类型"},
+    {field = "relate_id", table = "skin"},
+  ]
+
+  [tables.pack]
+  sheet = ["礼包"]
+  workbook = "xlsx/商城表.xlsx"
+  horizontal = false
+  enums = [
+    {field = "dice_skin", table = "skin"},
+    {field = "theme_skin", table = "skin"},
+  ]
+
+  [tables.gift]
+  workbook = "xlsx/礼物表.xlsx"
+  horizontal = false
+
+  [tables.room]
+  workbook = "xlsx/房间配置表.xlsx"
+  horizontal = false
+  enums = [
+    {field = "room_type", table = "enum", sheet = "房间类型"},
+    {field = "game_type", table = "enum", sheet = "游戏类型"},
+  ]
+
+  [tables.score]
+  workbook = "xlsx/经验表.xlsx"
+  sheet = ["段位经验表"]
+  horizontal = false
+  enums = [
+  ]
+
+  [tables.exp]
+  workbook = "xlsx/经验表.xlsx"
+  sheet = ["升级经验表"]
+  horizontal = false
+  enums = [
+  ]
+
+  [tables.task]
+  workbook = "xlsx/任务表.xlsx"
+  sheet = ["每日任务", "成就", "七日登录", "段位任务"]
+  horizontal = false
+  enums = [
+    {field = "task_type", table = "enum", sheet = "任务组"},
+    {field = "task_mode", table = "enum", sheet = "任务模式"},
+    {field = "skin", table = "skin"},
+  ]
+
+  [tables.exchange]
+  workbook = "xlsx/任务表.xlsx"
+  sheet = ["成就兑换"]
+  horizontal = false
+  enums = [
+    {field = "skin", table = "skin"},
+  ]
